@@ -1,5 +1,14 @@
 # ReHealth HealthAgent
 
+<p align="center">
+  <a href="https://github.com/csong8904-spec/ReHealthAI-HealthAgent/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/csong8904-spec/ReHealthAI-HealthAgent/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-blue"></a>
+  <img alt="Python 3.10+" src="https://img.shields.io/badge/python-3.10%2B-blue">
+  <a href="README.md"><img alt="中文 | English" src="https://img.shields.io/badge/%E4%B8%AD%E6%96%87%20%7C%20English-bilingual-2ea44f"></a>
+  <img alt="离线模式无需 API Key" src="https://img.shields.io/badge/offline-no%20API%20key-success">
+  <img alt="仅供研究" src="https://img.shields.io/badge/use-research%20only-orange">
+</p>
+
 [English](README.md) | **简体中文**
 
 一个**确定性**的小型模拟器，用于研究行为健康干预中「依从性 — 情绪 — 生理」三者如何相互作用。
@@ -7,6 +16,10 @@
 它只诚实地回答一个问题：*给定一个患者画像、一个干预方案和一套合理的依从模型，会得到什么轨迹——以及为什么？*
 
 > **仅供研究与演示。** 本软件不是医疗器械，不是诊断工具，也不构成任何临床建议。不得将任何输出用于真实个人的医疗决策。
+
+<p align="center">
+  <img src="docs/demo.gif" alt="90 天模拟轨迹" width="860">
+</p>
 
 ---
 

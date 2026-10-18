@@ -1,5 +1,14 @@
 # ReHealth HealthAgent
 
+<p align="center">
+  <a href="https://github.com/csong8904-spec/ReHealthAI-HealthAgent/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/csong8904-spec/ReHealthAI-HealthAgent/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-blue"></a>
+  <img alt="Python 3.10+" src="https://img.shields.io/badge/python-3.10%2B-blue">
+  <a href="README.zh-CN.md"><img alt="中文 | English" src="https://img.shields.io/badge/%E4%B8%AD%E6%96%87%20%7C%20English-bilingual-2ea44f"></a>
+  <img alt="Offline: no API key required" src="https://img.shields.io/badge/offline-no%20API%20key-success">
+  <img alt="Research use only" src="https://img.shields.io/badge/use-research%20only-orange">
+</p>
+
 **English** | [简体中文](README.zh-CN.md)
 
 A small, **deterministic** simulator of how adherence, emotion and physiology
@@ -11,6 +20,10 @@ a plausible adherence model, what trajectory do we get — and why?*
 > **Research and illustration only.** This is not a medical device, not a
 > diagnostic tool, and not clinical advice. No output here should be used to
 > make decisions about a real person.
+
+<p align="center">
+  <img src="docs/demo.gif" alt="90-day simulated trajectory" width="860">
+</p>
 
 ---
 

@@ -97,6 +97,11 @@ the model semantics and the packaging are not.
 * `pyproject.toml`, `CHANGELOG.md`, `.env.example` covering every variable.
 * Bilingual documentation: `README.md` (English) and `README.zh-CN.md`
   (简体中文), cross-linked at the top of each file; same for the changelogs.
+* Project presentation: a badge block (CI, license, Python, bilingual, offline,
+  research-only), an animated 90-day trajectory (`docs/demo.gif`) and a
+  1280x640 social preview (`docs/social-preview.png`).
+* `CITATION.cff` for research citation, and GitHub issue templates
+  (bug report / feature request) with a bilingual checklist.
 * The generated OpenAPI documentation (`/docs`) is bilingual: app description,
   tags, endpoint summaries, request-field hints and response descriptions all
   carry English and 简体中文. `.env.example` is bilingual too.

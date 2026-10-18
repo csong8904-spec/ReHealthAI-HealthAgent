@@ -75,6 +75,18 @@ def test_env_example_is_bilingual_and_documents_every_variable():
         assert variable in text
 
 
+def test_readme_images_exist():
+    """Every local image referenced by the READMEs must be committed."""
+    pattern = re.compile(r'(?:src="|!\[[^\]]*\]\()([^")\s]+\.(?:png|gif|jpg|jpeg|svg))')
+    for name in ("README.md", "README.zh-CN.md"):
+        text = (REPO_ROOT / name).read_text(encoding="utf-8")
+        for match in pattern.finditer(text):
+            target = match.group(1)
+            if target.startswith(("http://", "https://")):
+                continue
+            assert (REPO_ROOT / target).exists(), f"{name} references missing {target}"
+
+
 def test_readme_does_not_advertise_missing_files():
     readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
     for referenced in ("simulate.py", "visualize.py", "pyproject.toml"):

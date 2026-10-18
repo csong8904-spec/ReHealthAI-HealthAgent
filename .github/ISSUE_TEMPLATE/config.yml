@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security or sensitive-data issue
+    url: https://github.com/csong8904-spec/ReHealthAI-HealthAgent/security/policy
+    about: Please do not open a public issue for credentials, patient data or other sensitive material. 涉及凭据、患者数据等敏感内容请勿公开提 issue。

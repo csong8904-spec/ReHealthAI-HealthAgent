@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this software in research, please cite it as below."
+title: "ReHealth HealthAgent"
+abstract: >-
+  A small, deterministic simulator of how adherence, emotion and physiology
+  interact over a behavioural health intervention. It provides an optional
+  LLM-based adherence backend, a reproducible offline rule model, a CLI, a
+  FastAPI service and a pytest suite. Research and illustration only; not a
+  medical device and not clinical advice.
+version: "0.2.0"
+date-released: "2026-10-18"
+type: software
+license: Apache-2.0
+repository-code: "https://github.com/csong8904-spec/ReHealthAI-HealthAgent"
+url: "https://github.com/csong8904-spec/ReHealthAI-HealthAgent"
+keywords:
+  - health simulation
+  - behavioural intervention
+  - adherence modelling
+  - digital health
+  - multi-agent
+  - reproducible research
+authors:
+  - name: "ReHealth AI"
+    website: "https://github.com/csong8904-spec"

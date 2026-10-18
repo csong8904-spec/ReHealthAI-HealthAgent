@@ -1,0 +1,61 @@
+name: Bug report
+description: Report a reproducible problem with the simulator, CLI or API.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug.
+        感谢反馈。请尽量提供可复现信息；安全或数据类问题请**不要**公开贴出敏感内容。
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened? / 发生了什么
+      description: Describe the actual behaviour and the expected behaviour. / 描述实际行为与预期行为。
+      placeholder: |
+        Actual:
+        Expected:
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce / 复现步骤
+      description: Exact commands, inputs and the relevant output. / 具体命令、输入与相关输出。
+      placeholder: |
+        python simulate.py --offline --days 30 --seed 42
+        ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version / 版本
+      description: Output of `python -c "import healthagent; print(healthagent.__version__)"`.
+      placeholder: "0.2.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment / 环境
+      options:
+        - Python 3.10 (Linux/macOS)
+        - Python 3.11
+        - Python 3.12
+        - Windows
+        - Docker / CI
+        - Other (please specify)
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks / 检查项
+      options:
+        - label: I reproduced this with `--offline` (no LLM key). / 我用离线模式复现过。
+        - label: This is not a request for medical advice. / 这不是医疗建议请求。
+          required: true
+        - label: This contains no patient data or credentials. / 内容不含患者数据或凭据。
+          required: true

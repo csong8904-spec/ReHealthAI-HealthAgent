@@ -51,6 +51,8 @@
 * `.github/workflows/ci.yml` — Python 3.10/3.12 + 离线 CLI 冒烟测试。
 * `pyproject.toml`、`CHANGELOG.md`、`.env.example` 覆盖所有变量。
 * 双语文档：`README.md`（英文）与 `README.zh-CN.md`（简体中文），顶部互相链接；两个 CHANGELOG 亦然。
+* 项目展示：徽章区（CI、许可证、Python、双语、离线、仅供研究）、90 天轨迹动图（`docs/demo.gif`）与 1280x640 社交预览图（`docs/social-preview.png`）。
+* `CITATION.cff`（便于学术引用）与 GitHub issue 模板（bug / feature，含双语检查项）。
 * 自动生成的 OpenAPI 文档（`/docs`）为中英双语：应用描述、分组标签、接口摘要、请求字段说明与响应说明均含英文 + 简体中文；`.env.example` 同样双语。
 
 ### 移除
