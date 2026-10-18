@@ -1,0 +1,65 @@
+name: CI
+
+# Run on every push and every pull request. Everything here runs offline: no
+# secrets are required, so the workflow is safe for pull requests from forks.
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install package with dev + plot dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev,plot]"
+
+      - name: Run test suite
+        run: pytest -q
+
+      - name: CLI + visualizer smoke test
+        env:
+          REHEALTH_OFFLINE: "1"
+        run: |
+          rm -rf /tmp/out
+          python simulate.py --offline --days 14 --seed 42 \
+            --start-date 2026-01-05 --out /tmp/out
+          test -f "$(ls /tmp/out/trajectory_*.json | head -n1)"
+          test -f "$(ls /tmp/out/report_*.txt | head -n1)"
+          python visualize.py "$(ls /tmp/out/trajectory_*.json | head -n1)"
+          test -f "$(ls /tmp/out/*_chart.png | head -n1)"
+
+      - name: Run the documented examples
+        env:
+          REHEALTH_OFFLINE: "1"
+        run: |
+          python examples/sleep_simulation.py > /dev/null
+          python examples/cardio_simulation.py > /dev/null
+
+      - name: HTTP API import smoke test
+        run: python -c "from api.main import app; print(app.title)"
+
+      - name: Verify public package API
+        run: python -c "import healthagent; print(healthagent.__version__)"

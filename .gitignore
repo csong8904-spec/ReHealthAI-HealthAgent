@@ -1,0 +1,62 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+wheels/
+*.egg-info/
+.eggs/
+.installed.cfg
+pip-wheel-metadata/
+.venv/
+venv/
+ENV/
+env/
+
+# --- Secrets / local configuration ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# --- Generated outputs ---
+outputs/
+results/
+data/
+*.sqlite
+*.sqlite3
+*.db
+*.db-wal
+*.db-shm
+
+# --- Large binary documents ---
+artifacts/
+docs/private/
+*.pptx
+*.ppt
+*.docx
+*.pdf
+*.key
+
+# --- Caches / tooling ---
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+node_modules/
+
+# --- IDE / OS ---
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
