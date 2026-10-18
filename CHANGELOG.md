@@ -1,5 +1,7 @@
 # Changelog
 
+**English** | [简体中文](CHANGELOG.zh-CN.md)
+
 All notable changes to this project are documented here.
 
 ## [0.2.0] - 2026-10-18
