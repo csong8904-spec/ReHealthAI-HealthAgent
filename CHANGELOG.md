@@ -96,7 +96,10 @@ the model semantics and the packaging are not.
 * `.github/workflows/ci.yml` — Python 3.10/3.12 + offline CLI smoke test.
 * `pyproject.toml`, `CHANGELOG.md`, `.env.example` covering every variable.
 * Bilingual documentation: `README.md` (English) and `README.zh-CN.md`
-  (简体中文), cross-linked at the top of each file.
+  (简体中文), cross-linked at the top of each file; same for the changelogs.
+* The generated OpenAPI documentation (`/docs`) is bilingual: app description,
+  tags, endpoint summaries, request-field hints and response descriptions all
+  carry English and 简体中文. `.env.example` is bilingual too.
 
 ### Removed
 

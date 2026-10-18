@@ -50,7 +50,8 @@
 * `tests/` — 83 个 pytest 测试，含剂量反应不变式。
 * `.github/workflows/ci.yml` — Python 3.10/3.12 + 离线 CLI 冒烟测试。
 * `pyproject.toml`、`CHANGELOG.md`、`.env.example` 覆盖所有变量。
-* 双语文档：`README.md`（英文）与 `README.zh-CN.md`（简体中文），顶部互相链接；本文件与 `CHANGELOG.md` 亦然。
+* 双语文档：`README.md`（英文）与 `README.zh-CN.md`（简体中文），顶部互相链接；两个 CHANGELOG 亦然。
+* 自动生成的 OpenAPI 文档（`/docs`）为中英双语：应用描述、分组标签、接口摘要、请求字段说明与响应说明均含英文 + 简体中文；`.env.example` 同样双语。
 
 ### 移除
 

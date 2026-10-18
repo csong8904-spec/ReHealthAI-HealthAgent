@@ -196,6 +196,9 @@ uvicorn api.main:app --reload                     # from the repo root
 Environment: `REHEALTH_API_KEY` (when set, all `/api/*` routes require
 `X-API-Key`), `REHEALTH_CORS_ORIGINS`, `REHEALTH_DB_PATH`.
 
+Interactive documentation is generated at `/docs` and `/openapi.json`; every
+description, field hint and response is written in **English + 简体中文**.
+
 The database is **unencrypted SQLite with no audit trail** — treat it as
 synthetic/test data only.
 

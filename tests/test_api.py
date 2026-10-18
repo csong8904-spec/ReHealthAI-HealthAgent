@@ -119,6 +119,23 @@ def test_patient_simulation_persists_history(client):
     assert history[0]["days"] == 4
 
 
+def test_openapi_docs_are_bilingual(client):
+    """The generated /docs must carry both English and 简体中文 descriptions."""
+    schema = client.get("/openapi.json").json()
+    description = schema["info"]["description"]
+    assert "Research use only" in description
+    assert any("\u4e00" <= ch <= "\u9fff" for ch in description)
+
+    tagged = {tag["name"]: tag.get("description", "") for tag in schema.get("tags", [])}
+    for name in ("meta", "patients", "records", "simulation"):
+        assert name in tagged
+        assert any("\u4e00" <= ch <= "\u9fff" for ch in tagged[name])
+
+    patient_fields = schema["components"]["schemas"]["PatientCreate"]["properties"]
+    assert "患者姓名" in patient_fields["name"]["description"]
+    assert "Patient name" in patient_fields["name"]["description"]
+
+
 def test_api_key_gate(monkeypatch, client):
     monkeypatch.setenv("REHEALTH_API_KEY", "s3cret")
     assert client.get("/api/patients").status_code == 401

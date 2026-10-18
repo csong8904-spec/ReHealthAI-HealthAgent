@@ -168,6 +168,8 @@ uvicorn api.main:app --reload                     # 在仓库根目录执行
 
 环境变量：`REHEALTH_API_KEY`（设置后所有 `/api/*` 需要 `X-API-Key`）、`REHEALTH_CORS_ORIGINS`、`REHEALTH_DB_PATH`。
 
+交互式文档由 `/docs` 与 `/openapi.json` 自动生成；其中每一条描述、字段说明与响应说明都是**中英双语**。
+
 数据库是**未加密的 SQLite，且没有审计日志**——只当作合成/测试数据使用。
 
 ---

@@ -60,6 +60,21 @@ def test_no_author_local_absolute_paths_in_sources():
     assert not offenders, f"machine-specific paths found in: {offenders}"
 
 
+def test_env_example_is_bilingual_and_documents_every_variable():
+    text = (REPO_ROOT / ".env.example").read_text(encoding="utf-8")
+    assert any("\u4e00" <= ch <= "\u9fff" for ch in text), "Chinese comments are missing"
+    for variable in (
+        "DEEPSEEK_API_KEY",
+        "DEEPSEEK_BASE_URL",
+        "DEEPSEEK_MODEL",
+        "REHEALTH_OFFLINE",
+        "REHEALTH_API_KEY",
+        "REHEALTH_CORS_ORIGINS",
+        "REHEALTH_DB_PATH",
+    ):
+        assert variable in text
+
+
 def test_readme_does_not_advertise_missing_files():
     readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
     for referenced in ("simulate.py", "visualize.py", "pyproject.toml"):
